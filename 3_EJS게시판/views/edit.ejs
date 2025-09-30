@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>게시글 수정 페이지</h1>
+    <form action="/edit/<%=post.id%>" method="post">
+        <p>제목 : <input type="text" name="title" value="<%= post.title%>"></p>
+        <p>작성자 : <input type="text" name="writer" value="<%= post.writer%>"></p>
+        <!-- input태그는 value에 값이 저장되지만 textarea는 아니다. -->
+        <p>내용 : <textarea name="content" rows="5" cols="60"><%= post.content %></textarea></p>
+        <input type="submit" value="등록">
+    </form>
+</body>
+</html>

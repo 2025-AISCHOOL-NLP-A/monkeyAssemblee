@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>게시글 제목 : <%=post.title%></h1>
+    <p>작성자 : <%=post.writer%> || 조회수 : <%=post.hit%></p>
+    <p><%=post.content%></p>
+    <p>
+        <a href="/">메인페이지 이동</a>
+        <a href="/edit/<%=post.id%>">수정하기</a>
+
+        
+        <!-- 삭제하기는 DB값이 달라지기때문에 POST요청해야함.
+            그런데 <a>태그는 GET요청만 가능. 
+            form태그로 한번 해보자. -->
+    </p>
+    <form action="/delete/<%=post.id%>" method="post" onsubmit="return confirm('진짜 지울껴?')">
+        <!-- 삭제절차는 항상 confirm확인이 필요하다. 원래 true이면 삭제,false이면 삭제중지여야하지만 return을 앞에 붙이면 그로직이 실행도미 -->
+        <button>삭제하기</button>
+    </form>
+
+</body>
+</html>

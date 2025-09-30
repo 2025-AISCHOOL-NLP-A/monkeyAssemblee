@@ -1,0 +1,10 @@
+    <% if(user==null){ %>
+        <a href="/login">로그인</a>
+    <%}else{%>
+        <strong><%=user %>님 환영합니다.</strong>
+        <a href="/logout">로그아웃</a>
+        <!-- 전체 회원 조회 -->
+        <a href="/userlist">전체회원조회</a>
+
+    <%}%>
+    <hr>
